@@ -7,21 +7,17 @@
     include 'conexion.php';
     //$conexion = mysqli_connect("localhost","root","","sistema");
 
-    //inicio del proceso de sesion
-    session_start();
-    $_SESSION['usuario']=$usuario;
     
     //query para consultar el usario en la base
-    $query="select * from usuarios where usuario = '$usuario' and constraseña='$contraseña'";
+    //$query="select * from usuarios where usuario = '$usuario' and constraseña='$contraseña'";
+    $query="Insert into usuarios (usuario, constraseña) values ('$usuario', '$contraseña')";
     $resultado = mysqli_query($db,$query);
     
-    $registro = mysqli_num_rows($resultado);
-
-    if($registro){
-        header("location:bienvenido.php");
+    if($resultado){
+        header("location:index.html");
     }
     else{
-        echo "<h1>Error de autentificación</h1>";
+        echo "<h1>Error de Registro</h1>";
     }
     mysqli_close($db);
 ?>

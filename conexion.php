@@ -1,7 +1,8 @@
 <?php
-    $servidor = "localhost";
-    $usuario = "root";
-    $contraseña = "";
-    $basedatos = "sistema";
-    $conexion = mysqli_connect($servidor,$usuario,$contraseña,$basedatos);
+    $server = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "sistema";
+    //Conexion
+    $db = mysqli_connect($server,$username,$password,$database);
 ?>
